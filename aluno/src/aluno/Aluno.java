@@ -19,8 +19,11 @@ public class Aluno extends Notas {
 	public int getMatricula() {
 		return matricula;
 	}
+	
 	public void setMatricula(int matricula) {
 		this.matricula = matricula;
 	}
+	
+	
 	
 }

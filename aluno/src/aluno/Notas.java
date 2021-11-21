@@ -1,7 +1,6 @@
 package aluno;
 
 public class Notas {
-
 	
 	private double n1;
 	
@@ -20,23 +19,16 @@ public class Notas {
 	}
 
 	public double calculaMedia() {
-		double total = getN1() + getN2() + getN3() + getN4() + getN5();
-		if(n5 != 0) {
-			this.media = total/5;
-			return this.media;
-		} else {
+		double total = getN1() + getN2() + getN3() + getN4();
 			this.media = total/4;
 			return this.media;
-		}
 	}
 	
-	
-	
-//	public void setMedia() {
-//		if(n5 != 0) {
-//			this.media = ;
-//		}
-//	}
+	public double calculaMediaRecuperacao() {
+		double mediaFinal = (calculaMedia() + n5)/2;
+		this.media = mediaFinal;
+		return this.media;
+	} 
 	
 	public double getN1() {
 		return n1;
