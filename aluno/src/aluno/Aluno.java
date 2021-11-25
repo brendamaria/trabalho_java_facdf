@@ -5,10 +5,6 @@ public class Aluno extends Notas {
 	private String nome;
 	private int matricula;
 	
-	public Aluno(String nome) {
-		this.nome = nome;
-	}
-	
 	public String getNome() {
 		return nome;
 	}

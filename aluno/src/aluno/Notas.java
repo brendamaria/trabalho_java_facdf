@@ -24,7 +24,7 @@ public class Notas {
 			return this.media;
 	}
 	
-	public double calculaMediaRecuperacao() {
+	public double calculaMediaRecuperacao(double n5) {
 		double mediaFinal = (calculaMedia() + n5)/2;
 		this.media = mediaFinal;
 		return this.media;
