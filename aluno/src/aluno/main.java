@@ -10,59 +10,68 @@ public class main {
 	public static void main(String[] args) {
 
 		Aluno aluno = new Aluno();
-
+		aluno.setPr(true);
+		
 		String nome = JOptionPane.showInputDialog("Digite o nome do aluno(a): ");
 		aluno.setNome(nome);
-
-		String nota1 = (JOptionPane.showInputDialog("Digite a primeira nota: "));
-		nota1 = nota1.replace(",", ".");
-		double nota1D = Double.parseDouble(nota1);
-		if (nota1D < 0 || nota1D > 10) {
-			JOptionPane.showMessageDialog(null,
-					"Voce digitou: " + nota1D + ". Não aceitamos números menores que 0 e maiores que 10", "Notas",
-					JOptionPane.INFORMATION_MESSAGE);
-		} else {
-			aluno.setN1(nota1D);
-
+		
+		while(aluno.isPr()){
+			pegarNota1(aluno);
 		}
-
-		String nota2 = (JOptionPane.showInputDialog("Digite a segunda nota: "));
-		nota2 = nota2.replace(",", ".");
-		double nota2D = Double.parseDouble(nota1);
-		if (nota2D < 0 || nota2D > 10) {
-			JOptionPane.showMessageDialog(null,
-					"Voce digitou: " + nota2D + ". Não aceitamos números menores que 0 e maiores que 10", "Notas",
-					JOptionPane.INFORMATION_MESSAGE);
-		} else {
-			aluno.setN1(nota2D);
+		aluno.setPr(true);
+		while(aluno.isPr()){
+			pegarNota2(aluno);
 		}
-
-		String nota3 = (JOptionPane.showInputDialog("Digite a terceira nota: "));
-		nota3 = nota3.replace(",", ".");
-		double nota3D = Double.parseDouble(nota1);
-		if (nota3D < 0 || nota3D > 10) {
-			JOptionPane.showMessageDialog(null,
-					"Voce digitou: " + nota3D + ". Não aceitamos números menores que 0 e maiores que 10", "Notas",
-					JOptionPane.INFORMATION_MESSAGE);
-		} else {
-			aluno.setN3(nota3D);
-
+		aluno.setPr(true);
+		while(aluno.isPr()){
+			pegarNota3(aluno);
 		}
-
-		String nota4 = (JOptionPane.showInputDialog("Digite a quarta nota: "));
-		nota4 = nota4.replace(",", ".");
-		double nota4D = Double.parseDouble(nota1);
-		if (nota4D < 0 || nota4D > 10) {
-			JOptionPane.showMessageDialog(null,
-					"Voce digitou: " + nota4D + ". Não aceitamos números menores que 0 e maiores que 10", "Notas",
-					JOptionPane.INFORMATION_MESSAGE);
-		} else {
-			aluno.setN4(nota4D);
+		aluno.setPr(true);
+		while(aluno.isPr()){
+			pegarNota4(aluno);
 		}
-
+		
 		aluno.calculaMedia();
 
-		System.out.println(aluno.getN1());
 	}
+	
+	public static void pegarNota1(Aluno aluno) {
+		if(aluno.isPr()) {
+			String nota1 = (JOptionPane.showInputDialog("Digite a primeira nota: "));
+			aluno.setN1(nota1);
+			
+		} else {
+			
+		}
+	}
+	
+	public static void pegarNota2(Aluno aluno) {
+		if(aluno.isPr()) {
+			String nota = (JOptionPane.showInputDialog("Digite a segunda nota: "));
+			aluno.setN2(nota);
+		} else {
+			return;
+		}
 
+	}
+	
+	public static void pegarNota3(Aluno aluno) {
+		if(aluno.isPr()) {
+			String nota = (JOptionPane.showInputDialog("Digite a terceira nota: "));
+			aluno.setN3(nota);
+		} else {
+			return;
+		}
+
+	}
+	
+	public static void pegarNota4(Aluno aluno) {
+		if(aluno.isPr()) {
+			String nota = (JOptionPane.showInputDialog("Digite a quarta nota: "));
+			aluno.setN4(nota);
+		} else {
+			return;
+		}
+
+	}
 }
